@@ -2,6 +2,7 @@ package com.cvte.mindlinker.advancedplan.thread
 
 class TestThreadLocal {
     var threadLocal = ThreadLocal<String>()
+
     companion object {
         class ProductThread(st: TestThreadLocal) : Thread() {
             var test: TestThreadLocal = st
@@ -32,4 +33,9 @@ class TestThreadLocal {
             product.start()
         }
     }
+
+    inner class TestThread: Thread() {
+
+    }
+
 }

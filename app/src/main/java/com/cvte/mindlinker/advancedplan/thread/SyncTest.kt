@@ -1,11 +1,14 @@
 package com.cvte.mindlinker.advancedplan.thread
 
+import java.util.concurrent.atomic.AtomicBoolean
+
 class SyncTest  {
     var count = 0
     @Synchronized fun add(){
         count ++
     }
     companion object {
+        val a = AtomicBoolean(true)
         class CountThread(st: SyncTest) : Thread() {
             var syncTest: SyncTest = st
             override fun run() {
